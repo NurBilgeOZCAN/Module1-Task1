@@ -2,58 +2,28 @@
 
 ## Overview
 
-This project was created as part of the **Vibe Coding Challenge: Build a Task Board** lab.
+This project is a browser-based task management application built with React, TypeScript, and Vite. It was created as part of the **Vibe Coding Challenge: Build a Task Board** lab.
 
-The goal of this lab was to experience a fast, AI-assisted development workflow before moving into a more structured, spec-driven approach in later modules. The application was built using natural language prompts only, without writing a formal PRD, technical specification, or implementation plan.
+Users can organize tasks across three workflow columns (To Do, In Progress, Done) and manage their personal task progress visually using drag-and-drop interactions. All data is saved to the browser's localStorage for persistence across page refreshes.
 
-## Lab Context
+## Tech Stack
 
-| Item         | Description                          |
-| ------------ | ------------------------------------ |
-| **Module**   | Module 1                             |
-| **Task**     | Vibe Coding Challenge                |
-| **Project Name** | Task Board Vibe                   |
-| **Duration** | 35 minutes                           |
-| **Approach** | Vibe Coding                          |
-| **Tech Stack** | React, TypeScript, Vite            |
-| **Backend**  | None                                 |
-| **Storage**  | Browser localStorage                 |
-
-## Objective
-
-The objective of this challenge was to build a working personal task board using only AI chat.
-
-The task board needed to include:
-
-- A Kanban-style board
-- Three task columns:
-  - To Do
-  - In Progress
-  - Done
-- Create, edit, and delete task functionality
-- Drag and drop between columns
-- Data persistence using browser localStorage
-- Keyboard shortcut support, especially `n` for creating a new task
-
-## What Was Built
-
-This project is a browser-based task management application built with React, TypeScript, and Vite.
-
-It allows users to organize tasks across three workflow columns and manage their personal task progress visually.
-
-The project was generated and implemented through AI-assisted prompting, following the vibe coding style described in the lab guide.
+- React
+- TypeScript
+- Vite
+- HTML / CSS
+- Browser localStorage
+- npm
 
 ## Key Features
 
 ### Kanban Board
 
-The application includes a three-column Kanban board structure:
+Three-column Kanban board structure:
 
 - To Do
 - In Progress
 - Done
-
-Tasks can be organized according to their current status.
 
 ### Task Management
 
@@ -62,18 +32,111 @@ Users can:
 - Create new tasks
 - Edit existing tasks
 - Delete tasks
-- Move tasks between columns
+- Move tasks between columns via drag-and-drop
 
-### Drag and Drop
+### Data Persistence
 
-Tasks can be moved between columns using drag-and-drop interaction.
-
-### Local Storage Persistence
-
-Task data is saved in the browser using `localStorage`.
-
-This means the board state remains available after refreshing the page.
+Task data is saved to `localStorage`, so the board state remains available after refreshing the page.
 
 ### Keyboard Shortcut
 
-The application supports keyboard interaction.
+Pressing the `n` key starts the new task creation flow.
+
+## Project Structure
+
+```txt
+TASK-BOARD-VIBE/
+├── .vscode/
+├── dist/
+├── node_modules/
+├── public/
+├── src/
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+```
+
+## How to Run
+
+### Install dependencies:
+
+```bash
+npm install
+```
+### Start the development server:
+
+```bash
+npm run dev
+```
+### Open the local development URL shown in the terminal (e.g., http://localhost:5173).
+
+### Build
+Create a production build:
+
+```bash
+npm run build
+```
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+## Lab Reflection Time
+
+### 1. Does it work?
+
+- [ ] Yes, fully functional
+- [x] Partially - some features work
+- [ ] No - errors or blank screen
+- [ ] Didn't get to running it
+
+### 2. What's missing or broken?
+
+| Feature | Working? | Notes |
+| ------- | -------- | ----- |
+| Three columns display | Yes | To Do, In Progress, Done all visible |
+| Can create tasks | Yes | Modal/form for new task entry |
+| Can drag between columns | Yes | Drag-and-drop fully functional |
+| Data persists on refresh | Yes | localStorage working correctly |
+| Keyboard shortcuts | Yes | n key opens new task modal |
+
+### 3. How many times did you re-explain context?
+
+- [ ] 0-2 times (AI got it)
+- [ ] 3-5 times (had to clarify)
+- [x] 6+ times (constant re-explaining)
+- [ ] Lost count
+
+### 4. What did AI assume (that you didn't specify)?
+
+- **Tech decisions:** Used Vite + React + TypeScript without being explicitly asked for the bundler choice
+- **Component structure:** Assumed a flat component hierarchy with App as the main container and separate Column/Task components
+- **Styling approach:** Used basic CSS modules with minimal styling, assumed a light theme by default
+- **State management:** Used React useState and lifted state up to App component; assumed no context or reducer needed
+- **Data format:** Assumed each task has id, title, description, status, and order fields
+
+### 5. Would you ship this?
+
+- [ ] Yes, production ready
+- [x] Maybe, with significant cleanup
+- [ ] No, too many issues
+- [ ] Definitely not
+
+### 6. Biggest frustrations?
+
+1. AI occasionally forgot the localStorage persistence requirement after generating new components
+2. Drag-and-drop implementation needed multiple prompts to get the column boundaries correct
+3. The keyboard shortcut (n) sometimes stopped working after adding new features, requiring re-explanation
+
+---
+
+**Author**  
+Nur Bilge ÖZCAN
