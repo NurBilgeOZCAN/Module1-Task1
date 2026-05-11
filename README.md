@@ -75,7 +75,7 @@ npm install
 ```bash
 npm run dev
 ```
-### Open the local development URL shown in the terminal (e.g., http://localhost:5173).
+### Open the local development URL shown in the terminal.
 
 ### Build
 Create a production build:
